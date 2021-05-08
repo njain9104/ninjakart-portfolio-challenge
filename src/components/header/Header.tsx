@@ -46,7 +46,7 @@ const Headers: FC<HeaderProps> = (props) => {
   };
 
   const filteredSites = siteList.filter((site) =>
-    site.name.includes(searchInput)
+    site.name.toLowerCase().includes(searchInput.toLowerCase())
   );
 
   return (
@@ -79,7 +79,7 @@ const Headers: FC<HeaderProps> = (props) => {
             </div>
             <iframe
               height="400"
-              width="700"
+              width="450"
               title={site.name}
               src={site.link}
             />
