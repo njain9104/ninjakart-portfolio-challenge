@@ -8,61 +8,65 @@ enum Tabs {
   MY_FAVORITES = "MY_FAVORITES",
 }
 
+const INIT_CREATED_SITES = [
+  {
+    id: 1,
+    name: "My Site One",
+    link: "https://place-your-bets.netlify.app/",
+    upvotes: 0,
+  },
+  {
+    id: 2,
+    name: "My Site Two",
+    link: "https://place-your-bets.netlify.app/",
+    upvotes: 0,
+  },
+  {
+    id: 3,
+    name: "My Site Three",
+    link: "https://place-your-bets.netlify.app/",
+    upvotes: 0,
+  },
+  {
+    id: 4,
+    name: "My Site Four",
+    link: "https://place-your-bets.netlify.app/",
+    upvotes: 0,
+  },
+];
+
+const INIT_FAV_SITES = [
+  {
+    id: 1,
+    name: "My Fav Site One",
+    link: "https://place-your-bets.netlify.app/",
+    upvotes: 0,
+  },
+  {
+    id: 2,
+    name: "My Fav Site Two",
+    link: "https://place-your-bets.netlify.app/",
+    upvotes: 0,
+  },
+  {
+    id: 3,
+    name: "My Fav Site Three",
+    link: "https://place-your-bets.netlify.app/",
+    upvotes: 0,
+  },
+  {
+    id: 4,
+    name: "My Fav Site Four",
+    link: "https://place-your-bets.netlify.app/",
+    upvotes: 0,
+  },
+];
+
 const App = () => {
   const [activeTab, setActiveTab] = useState<Tabs | string>(Tabs.MY_CREATIONS);
-  const [createdSites, setCreatedSites] = useState([
-    {
-      id: 1,
-      name: "My Site One",
-      link: "https://place-your-bets.netlify.app/",
-      upvotes: 0,
-    },
-    {
-      id: 2,
-      name: "My Site Two",
-      link: "https://place-your-bets.netlify.app/",
-      upvotes: 0,
-    },
-    {
-      id: 3,
-      name: "My Site Three",
-      link: "https://place-your-bets.netlify.app/",
-      upvotes: 0,
-    },
-    {
-      id: 4,
-      name: "My Site Four",
-      link: "https://place-your-bets.netlify.app/",
-      upvotes: 0,
-    },
-  ]);
+  const [createdSites, setCreatedSites] = useState(INIT_CREATED_SITES);
 
-  const [favSites, setFavSites] = useState([
-    {
-      id: 1,
-      name: "My Fav Site One",
-      link: "https://place-your-bets.netlify.app/",
-      upvotes: 0,
-    },
-    {
-      id: 2,
-      name: "My Fav Site Two",
-      link: "https://place-your-bets.netlify.app/",
-      upvotes: 0,
-    },
-    {
-      id: 3,
-      name: "My Fav Site Three",
-      link: "https://place-your-bets.netlify.app/",
-      upvotes: 0,
-    },
-    {
-      id: 4,
-      name: "My Fav Site Four",
-      link: "https://place-your-bets.netlify.app/",
-      upvotes: 0,
-    },
-  ]);
+  const [favSites, setFavSites] = useState(INIT_FAV_SITES);
 
   const onActiveTabChange = (e: MouseEvent<HTMLButtonElement>) => {
     setActiveTab(e.currentTarget.name);
