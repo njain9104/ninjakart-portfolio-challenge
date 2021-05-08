@@ -1,0 +1,22 @@
+.primaryBtn {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  font-family: inherit;
+  font-size: 24px;
+  text-align: center;
+}
+
+.primaryBtn:disabled {
+  pointer-events: none;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.primaryBtn:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.upvoteBtn {
+  font-size: 16px;
+}
