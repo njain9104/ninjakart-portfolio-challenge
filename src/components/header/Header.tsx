@@ -26,7 +26,7 @@ const Headers: FC<HeaderProps> = (props) => {
     setSiteList([...sites]);
   }, [sites]);
 
-  const onSearch = (e: ChangeEvent<HTMLInputElement>) => {
+  const onSearchInput = (e: ChangeEvent<HTMLInputElement>) => {
     setSearchInput(e.target.value);
   };
 
@@ -45,6 +45,10 @@ const Headers: FC<HeaderProps> = (props) => {
     onSort([...sortedSiteList]);
   };
 
+  const filteredSites = siteList.filter((site) =>
+    site.name.includes(searchInput)
+  );
+
   return (
     <div className="sites-container">
       <div className="sites-header">
@@ -61,13 +65,13 @@ const Headers: FC<HeaderProps> = (props) => {
             type="text"
             name="searchByName"
             value={searchInput}
-            onChange={onSearch}
+            onChange={onSearchInput}
             placeholder="Search by name"
           />
         </div>
       </div>
       <div className="sites">
-        {siteList.map((site) => (
+        {filteredSites.map((site) => (
           <div className="site" key={site.id}>
             <div className="site-details">
               <div>{site.name}</div>
